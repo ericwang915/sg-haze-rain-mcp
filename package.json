@@ -1,0 +1,55 @@
+{
+  "name": "sg-haze-rain-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Singapore haze (PSI / PM2.5) and rain, using NEA's live feeds and the caller's IP to pick the nearest region. Works with Claude Code, Codex, Claude Desktop, Cursor and any MCP client.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "singapore",
+    "haze",
+    "psi",
+    "pm25",
+    "rain",
+    "weather",
+    "nea",
+    "claude-code",
+    "codex"
+  ],
+  "license": "MIT",
+  "author": "Eric Wang (https://github.com/ericwang915)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericwang915/sg-haze-rain-mcp.git"
+  },
+  "homepage": "https://github.com/ericwang915/sg-haze-rain-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/ericwang915/sg-haze-rain-mcp/issues"
+  },
+  "type": "module",
+  "bin": {
+    "sg-haze-rain-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json && node -e \"require('fs').chmodSync('dist/index.js', 0o755)\"",
+    "dev": "node node_modules/typescript/bin/tsc -p tsconfig.json --watch",
+    "start": "node dist/index.js",
+    "test": "npm run build && node test/smoke.mjs",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}

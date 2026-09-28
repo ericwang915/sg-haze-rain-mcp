@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "sg-haze-rain": {
+      "command": "npx",
+      "args": ["-y", "github:ericwang915/sg-haze-rain-mcp"],
+      "env": {
+        "SG_HAZE_LANG": "en"
+      }
+    }
+  }
+}
