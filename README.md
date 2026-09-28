@@ -200,6 +200,16 @@ src/geo.ts      region / coords / IP resolution, haversine nearest-neighbour
 src/bands.ts    PSI and PM2.5 bands and NEA health advisories
 ```
 
+## Releasing (maintainers)
+
+Bump `version` in `package.json`, commit, then:
+
+```bash
+git tag v0.1.1 && git push --tags
+```
+
+The `Release to npm` workflow builds, runs the smoke test, checks the tag matches the version, and publishes with provenance. It needs an `NPM_TOKEN` repository secret (an npm granular access token with publish rights).
+
 ## Limitations
 
 - Not an NEA product. Readings are relayed as published; for official advisories see [haze.gov.sg](https://www.haze.gov.sg) and [nea.gov.sg](https://www.nea.gov.sg).

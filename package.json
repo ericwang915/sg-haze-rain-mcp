@@ -37,6 +37,10 @@
   "engines": {
     "node": ">=18.17"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "build": "node node_modules/typescript/bin/tsc -p tsconfig.json && node -e \"require('fs').chmodSync('dist/index.js', 0o755)\"",
     "dev": "node node_modules/typescript/bin/tsc -p tsconfig.json --watch",
