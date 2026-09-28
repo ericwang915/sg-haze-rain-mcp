@@ -125,7 +125,7 @@ npm install -g github:ericwang915/sg-haze-rain-mcp
 claude mcp add sg-haze-rain -- sg-haze-rain-mcp
 ```
 
-`npx -y github:…` downloads and builds on first run (a few seconds), then reuses the npx cache. An npm-registry package is planned; the `github:` form will keep working.
+`npx -y github:…` downloads and builds on first run (about 20 seconds), then reuses the npx cache, so later starts are instant. Pin a version with `github:ericwang915/sg-haze-rain-mcp#v0.1.0` if you prefer.
 
 ## Data sources
 
@@ -199,16 +199,6 @@ src/nea.ts      NEA feed client with camel/snake normalisation and a small cache
 src/geo.ts      region / coords / IP resolution, haversine nearest-neighbour
 src/bands.ts    PSI and PM2.5 bands and NEA health advisories
 ```
-
-## Releasing (maintainers)
-
-Bump `version` in `package.json`, commit, then:
-
-```bash
-git tag v0.1.1 && git push --tags
-```
-
-The `Release to npm` workflow builds, runs the smoke test, checks the tag matches the version, and publishes with provenance. It needs an `NPM_TOKEN` repository secret (an npm granular access token with publish rights).
 
 ## Limitations
 
